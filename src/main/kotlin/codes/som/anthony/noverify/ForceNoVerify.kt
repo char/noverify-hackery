@@ -35,3 +35,15 @@ fun Unsafe.getString(addr: Long): String? {
 
 // See JVMStructs.kt
 // See JVMTypes.kt
+// See JVMFlags.kt
+
+fun disableBytecodeVerifier() {
+    val flags = getFlags(getTypes(getStructs()))
+
+    for (flag in flags) {
+        if (flag.name == "BytecodeVerificationLocal"
+                || flag.name == "BytecodeVerificationRemote")   {
+            unsafe.putByte(flag.address, 0)
+        }
+    }
+}
