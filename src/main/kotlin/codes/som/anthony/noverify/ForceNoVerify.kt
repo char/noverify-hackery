@@ -16,7 +16,11 @@ private val findNativeMethod by lazy {
 }
 
 fun findNative(name: String, classLoader: ClassLoader? = null): Long {
-    return findNativeMethod.invoke(null, classLoader, name) as Long
+	val os = System.getProperty("os.name");
+	if (os.toLowerCase().startsWith("win"))
+		return findNativeMethod.invoke(null, ClassLoader.getSystemClassLoader(), name) as Long
+	else
+		return findNativeMethod.invoke(null, classLoader, name) as Long
 }
 
 fun Unsafe.getString(addr: Long): String? {
