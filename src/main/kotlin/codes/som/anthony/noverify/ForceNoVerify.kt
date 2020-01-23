@@ -38,6 +38,33 @@ fun Unsafe.getString(addr: Long): String? {
 // See JVMFlags.kt
 
 fun disableBytecodeVerifier() {
+    var l = findNativeMethod.invoke(null, ClassLoader.getSystemClassLoader(), "gHotSpotVMStructs") as Long
+
+	if (l == 0L) {
+		val os = System.getProperty("os.name");
+		System.out.println("jvm.dll/libjvm.dylib is not loaded.Try load it automatically...Your Os is " + os)
+		try{
+			
+		if (os.toLowerCase().startsWith("win")) {
+
+			System.load(System.getProperty("java.home") + "\\bin\\server\\" + "jvm.dll")
+
+		} else if (os.toLowerCase().startsWith("mac")) {
+			//lib/server/libjvm.dylib
+			//System.load(System.getProperty("java.home") + "//lib//server//" + "libjvm.dylib")
+			System.out.println("See issues on github.")
+            
+		}else {
+			System.out.println("Operate System not Supported.")
+		}
+			System.out.println("Loaded")
+		}
+		catch(x : Throwable){
+			x.printStackTrace()
+		}
+		
+	}
+    
     val flags = getFlags(getTypes(getStructs()))
 
     for (flag in flags) {
