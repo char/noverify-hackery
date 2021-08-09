@@ -1,9 +1,9 @@
-package codes.som.anthony.noverify.tests
+package codes.som.noverify.tests
 
 import codes.som.anthony.koffee.assembleClass
 import codes.som.anthony.koffee.insns.jvm.*
 import codes.som.anthony.koffee.modifiers.public
-import codes.som.anthony.noverify.disableBytecodeVerifier
+import codes.som.noverify.disableBytecodeVerifier
 import java.io.PrintStream
 
 fun main(args: Array<String>) {

@@ -1,4 +1,4 @@
-package codes.som.anthony.noverify
+package codes.som.noverify
 
 data class JVMStruct(val name: String) {
     val fields = mutableMapOf<String, Field>()

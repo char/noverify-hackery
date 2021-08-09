@@ -1,4 +1,4 @@
-package codes.som.anthony.noverify
+package codes.som.noverify
 
 import sun.misc.Unsafe
 

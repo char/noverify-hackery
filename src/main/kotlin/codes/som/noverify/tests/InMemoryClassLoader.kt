@@ -1,4 +1,4 @@
-package codes.som.anthony.noverify.tests
+package codes.som.noverify.tests
 
 import org.objectweb.asm.ClassWriter
 import org.objectweb.asm.tree.ClassNode

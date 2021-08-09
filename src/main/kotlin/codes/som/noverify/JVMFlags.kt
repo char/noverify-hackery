@@ -1,4 +1,4 @@
-package codes.som.anthony.noverify
+package codes.som.noverify
 
 data class JVMFlag(val name: String, val address: Long)
 

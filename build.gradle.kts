@@ -3,7 +3,7 @@ plugins {
     kotlin("jvm") version "1.3.61"
 }
 
-group = "codes.som.anthony"
+group = "codes.som"
 version = "1.0.0"
 
 repositories {
